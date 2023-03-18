@@ -1,0 +1,7 @@
+name: WelcomeMessages
+version: '${project.version}'
+main: com.martin.welcomess.WelcomeMessages
+api-version: 1.19
+authors: [Martin]
+description: Replaces default join messages with randomly selected custom ones.
+website: https://github.com/martin-coding
