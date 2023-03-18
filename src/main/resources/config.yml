@@ -1,0 +1,62 @@
+# Configuration file for the WelcomePlugin
+#
+# Here you can customize the welcome messages that appear when a player joins the server.
+
+# A list of randomly selected welcome messages. Divided into new and returning player messages.
+# The placeholder "{player}" will be replaced with the name of the joined player.
+# The messages can contain color codes with the "&" character.
+
+returning_player_messages:
+  - "&aGood to have you back, &e{player}&a! Let's show the new players how it's done."
+  - "&aGood to see you again, &e{player}&a! Let's craft some more epic items together."
+  - "&aGreat to see you again, &e{player}&a! Let's gather resources and create amazing things."
+  - "&aThe return of &e{player}&a! We missed your creativity and passion for the game."
+  - "&aWe missed you, &e{player}&a! Welcome back to the game!"
+  - "&aWelcome back, &e{player}&a! Let's continue to build our Minecraft legacy together."
+  - "&aWelcome back, &e{player}&a! The adventure continues!"
+  - "&aWelcome back, &e{player}&a! The game isn't the same without you."
+  - "&aWelcome back, &e{player}&a! The server has been eagerly awaiting your return."
+  - "&aWelcome back, &e{player}&a! The world is waiting for your creative genius."
+  - "&aWelcome back, &e{player}&a! Your presence has been sorely missed in the game."
+  - "&e{player}&a is back and ready to conquer the world of Minecraft once again!"
+  - "&e{player}&a is back to explore our vast Minecraft world once again!"
+  - "&e{player}&a is back to rule the Minecraft world once more!"
+  - "&e{player}&a is back! It's time to dig, craft, and explore once more."
+  - "&e{player}&a is back! Let's build some more amazing structures together."
+  - "&e{player}&a returns to the game! Let's get back to mining!"
+  - "&e{player}&a returns to the server with new ideas and new creations. Welcome back!"
+  - "&e{player}&a has returned to the blocky world of adventure and creativity!"
+  - "&aThe legendary &e{player}&a has returned to craft new stories and build amazing structures."
+  - "&aWelcome back, &e{player}&a! The creepers have been waiting for you."
+  - "&aThe pickaxe misses you, &e{player}&a. Welcome back to the mineshaft!"
+  - "&aGlad to see &e{player}&a has returned to explore the vast and limitless world of Minecraft."
+  - "&aThe Minecraft gods smile upon us as &e{player}&a returns to build their next masterpiece."
+  - "&aThe cows and sheep are ready for &e{player}&a to return and tend to their needs once again."
+  - "&e{player}&a is back to lead the community towards new adventures and challenges!"
+  - "&aThe villagers cheer as &e{player}&a returns to trade and protect the town from danger."
+
+new_player_messages:
+  - "&aA new player has arrived! Welcome, &e{player}&a, to our Minecraft community."
+  - "&aA new player has joined the game! Welcome, &e{player}&a!"
+  - "&aA warm welcome to our new player, &e{player}&a! Enjoy your time here!"
+  - "&aA warm welcome to our new player, &e{player}&a! We can't wait to see what you build."
+  - "&aIt's great to have you, &e{player}&a! Let's create something awesome."
+  - "&aNew player alert! Welcome, &e{player}&a, to the world of Minecraft!"
+  - "&aNew player alert! &e{player}&a, we're excited to have you here."
+  - "&aNew &e{player}&a on the server! Time to start crafting!"
+  - "&aWe're glad to have you, &e{player}&a! Enjoy your time in the game!"
+  - "&aWe're happy to have you, &e{player}&a! Welcome to our Minecraft world."
+  - "&aWelcome to our community, &e{player}&a! We can't wait to see what you build."
+  - "&aWelcome to our server, &e{player}&a! We hope you enjoy your time in our Minecraft universe."
+  - "&aWelcome to the server, &e{player}&a! Let's get building together!"
+  - "&aWelcome to the server, &e{player}&a! We hope you have an amazing time with us."
+  - "&aWelcome to the server, &e{player}&a! We're excited to see what you'll create!"
+  - "&aWelcome to the world of Minecraft, &e{player}&a! The possibilities are endless."
+  - "&aWelcome, &e{player}&a! Let's craft some amazing things together!"
+  - "&aWelcome, &e{player}&a! We hope you have a great time in our server."
+  - "&aWelcome, &e{player}&a, to our Minecraft family! Let's start building and exploring!"
+  - "&aWelcome to Minecraft, &e{player}&a! Get ready to discover an endless world of possibilities."
+  - "&aThe world of Minecraft is a better place with &e{player}&a joining us. Welcome!"
+  - "&aGrab your tools, &e{player}&a! It's time to mine, build and explore the wonders of Minecraft."
+  - "&aWelcome to our server, &e{player}&a. Get ready to embark on an epic adventure with a great community."
+  - "&aThe journey is just beginning for &e{player}&a! Welcome to Minecraft, where your imagination has no limits."
