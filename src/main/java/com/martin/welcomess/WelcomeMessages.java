@@ -1,19 +1,15 @@
 package com.martin.welcomess;
 
 import org.bukkit.ChatColor;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.File;
 import java.util.List;
 import java.util.Random;
 
 public final class WelcomeMessages extends JavaPlugin implements Listener {
-
-    private FileConfiguration config;
     private final Random random = new Random();
 
     @Override
@@ -22,8 +18,7 @@ public final class WelcomeMessages extends JavaPlugin implements Listener {
         getLogger().info("WelcomeMessages plugin enabled!");
         getServer().getPluginManager().registerEvents(this, this);
 
-        // Load the config file
-        loadConfig();
+        saveDefaultConfig();
     }
 
     @Override
@@ -36,14 +31,13 @@ public final class WelcomeMessages extends JavaPlugin implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         // disables vanilla messages
         event.joinMessage(null);
-      
         String message;
 
         if (event.getPlayer().hasPlayedBefore()) {
-            List<String> messages = config.getStringList("returning_player_messages");
+            List<String> messages = getConfig().getStringList("returning_player_messages");
             message = messages.get(random.nextInt(messages.size())).replace("{player}", event.getPlayer().getName());
         } else {
-            List<String> messages = config.getStringList("new_player_messages");
+            List<String> messages = getConfig().getStringList("new_player_messages");
             message = messages.get(random.nextInt(messages.size())).replace("{player}", event.getPlayer().getName());
         }
 
@@ -53,25 +47,5 @@ public final class WelcomeMessages extends JavaPlugin implements Listener {
         } else {
             getLogger().info("No messages in config.yml");
         }
-    }
-
-    private void loadConfig() {
-        // Creating the configuration file if it doesn't exist
-        if (!getDataFolder().exists()) {
-            if (getDataFolder().mkdir()) {
-                getLogger().info("Config created!");
-            }
-        }
-
-        File file = new File(getDataFolder(), "config.yml");
-
-        if (!file.exists()) {
-            saveResource("config.yml", false);
-        }
-
-        // Load the config file
-        config = getConfig();
-        config.options().copyDefaults(true);
-        saveConfig();
     }
 }
