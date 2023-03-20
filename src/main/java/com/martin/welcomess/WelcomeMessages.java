@@ -1,6 +1,8 @@
 package com.martin.welcomess;
 
+import net.kyori.adventure.text.Component;
 import org.bukkit.ChatColor;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -29,23 +31,21 @@ public final class WelcomeMessages extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        // disables vanilla messages
-        event.joinMessage(null);
-        String message;
+        // Get player from event
+        Player player = event.getPlayer();
 
-        if (event.getPlayer().hasPlayedBefore()) {
-            List<String> messages = getConfig().getStringList("returning_player_messages");
-            message = messages.get(random.nextInt(messages.size())).replace("{player}", event.getPlayer().getName());
+        // Check if player was already on the server
+        if (player.hasPlayedBefore()) {
+            event.joinMessage(null); // disables join message
+            List<String> return_messages = getConfig().getStringList("returning_player_messages");
+            String return_message = return_messages.get(random.nextInt(return_messages.size())).replace("{player}", player.getName());
+            // Message to (and only for) the joining player
+            player.sendMessage(ChatColor.translateAlternateColorCodes('&', return_message));
         } else {
-            List<String> messages = getConfig().getStringList("new_player_messages");
-            message = messages.get(random.nextInt(messages.size())).replace("{player}", event.getPlayer().getName());
-        }
-
-        // displays a personalized welcome message if one is found
-        if (!message.isEmpty()) {
-            event.getPlayer().sendMessage(ChatColor.translateAlternateColorCodes('&', message));
-        } else {
-            getLogger().info("No messages in config.yml");
+            List<String> new_messages = getConfig().getStringList("new_player_messages");
+            String new_message = new_messages.get(random.nextInt(new_messages.size())).replace("{player}", player.getName());
+            // Message to all online players
+            event.joinMessage(Component.text(ChatColor.translateAlternateColorCodes('&', new_message)));
         }
     }
 }
